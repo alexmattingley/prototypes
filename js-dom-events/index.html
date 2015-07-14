@@ -7,7 +7,8 @@
   
   </script>
 </head>
-<body>
+<body onload="console.log('body loaded')" onclick="console.log('Body has been clicked')">
+  
   <button onclick="console.log('This is a sad day')">Sad Button</button>
 
   <!-- Interesting that you can click an h1. Also interesting that since the default width is 100%, anywhere on the same line as the h1 triggers the event. -->
@@ -16,6 +17,10 @@
 
   <!-- Not continuously activating which is interesting, you need to hover anew to trigger -->
   <h2 onmouseover="console.log('You hovered over my h2 element')">Hover Board Me!</h2>
+
+  <p>Hello my name is <em onclick="console.log('You click my name again, i\'ll kick you in the nuts!')">Alex.</em></p>
+
+  <!-- when I click my em word, both the body and the em onclick's trigger. -->
 
 
 </body>
