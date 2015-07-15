@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Js Primitive Data Types</title>
     <script>
+
       function myMessage(){
         console.log("This is my myMessage");
       }
@@ -11,11 +12,16 @@
       function add(x,y){
         console.log(x+y);
       }
+
+      function greeting(name,num) {
+        console.log('Hello '+ name + '. You are ' + num);
+      }
     </script>
   </head>
       
     <button onclick="myMessage();">Click Me!</button>
-    <button onclick="add(1,7)">ADD</button>
+    <button onclick="add(1,7);">ADD</button>
+    <button onclick="greeting('alex', 25);">Greeting</button>
 
 
   </body>
