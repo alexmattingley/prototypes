@@ -15,16 +15,29 @@
   student.lastName = "Mattingley";
   student.age = 25;
   student.school = "LearningFuze";
-  student.classList = ["Javascript", "HTML", "CSS"];
+  student.classList = ["Javascript", " HTML ", " CSS"];
   console.log(student.classList);
 
-  //this isnt working
-  student.greeting() = {
-   "hello my name"
-};
+  student.greeting = function(){
+   return "hello, my name is " + student.firstName;
+   
+	};
 
+	student.aboutMe = function() {
+		return "My full name is " +student.firstName + " " + student.lastName + ", I am " +  student.age + " years old and I am a student at " + student.school;
+	}
 
+	console.log(student.aboutMe());
 
+	student.myClasses = function() {
+		return "I am taking the following classes: " + student.classList;
+	}
+
+	console.log(student.myClasses());
+
+	console.log("Here is my student object " + student);
+
+	console.log("Here is my student object", student);
   </script>
 </head>
 <body>
