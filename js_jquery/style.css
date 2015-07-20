@@ -57,3 +57,7 @@ div {
 	background-repeat: no-repeat;
 	background-size: contain;
 }
+
+.move-down {
+	margin-top: 400px;
+}
