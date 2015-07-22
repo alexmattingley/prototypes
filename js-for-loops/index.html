@@ -22,12 +22,29 @@
 				console.log(numbers[i]);
 			};
 
+			console.log("mixedArray loop")
+			var mixedArray = [4, 56, 11, 13, 97, 22, 7, 36, 19, 5, 8, 10];	
+			for(i=0; i<mixedArray.length; i+=2) {
 				
-			console.log("odd numbers");
-			for(i=0; i<numbers.length; i+=2) {
-				
-				console.log(numbers[i]);
+				console.log(mixedArray[i]);
 			}
+
+			//Does not ouput only odd numbers, it is outputting every other number, but its not in order.
+
+			var incorrectSortedArray = mixedArray.sort();
+			console.log(incorrectSortedArray);
+
+			//this outputs it as the first number, not actually numerically...so stack overflow:
+
+			function compareNumbers(a, b)
+			{
+			    return a - b;
+			}
+
+			var sortedArray = mixedArray.sort(compareNumbers);
+			console.log(sortedArray);
+
+
 
 		</script>
 	</head>
