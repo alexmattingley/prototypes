@@ -34,15 +34,14 @@
 			var incorrectSortedArray = mixedArray.sort();
 			console.log(incorrectSortedArray);
 
-			//this outputs it as the first number, not actually numerically...so stack overflow:
+			//this outputs it as the first number, not actually numerically...so a litte googling and this is what I got:
 
-			function compareNumbers(a, b)
-			{
+			function compareNumbers(a, b){
 			    return a - b;
 			}
 
-			var sortedArray = mixedArray.sort(compareNumbers);
-			console.log(sortedArray);
+			var numerically_sortedArray = mixedArray.sort(compareNumbers);
+			console.log(numerically_sortedArray);
 
 
 
