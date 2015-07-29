@@ -48,7 +48,28 @@ $(document).ready(function()
 	$('#playground1').append(playground_1_h1);
 	$('#playground1').append('<p>' + playground_1_p + '</p>');
 	$('#playground1').append(playground_p_red);
+	
 	//playground 2 code
+
+	
+	var awesome_class = '<div>' + $('.awesome_class:nth-child(1)').text() +'</div>';
+	var my_awesome_div2 = '<div>' + $('#my_awesome_div2').text() +'</div>';
+
+	var my_awesome_div3 = $("<div>",{
+
+ 		class: 'awesome_class',
+ 		text: $('#my_awesome_div3').text(),
+ 		id: 'my_awesome_div3',
+ 		'data-coolness': 'high'
+ 		});
+
+	$('#playground2').append(awesome_class);
+	$('#playground2').append(my_awesome_div2);
+	$('#playground2').append(my_awesome_div3);
+
+	$('#playground2 div:nth-child(1)').addClass('awesome_class');
+	$('#playground2 div:nth-child(2)').addClass('awesome_class');
+	$('#playground2 div:nth-child(2)').attr('id', 'my_awesome_div2');
 
 	//playground 3 code
 });
