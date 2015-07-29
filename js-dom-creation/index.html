@@ -72,6 +72,18 @@ $(document).ready(function()
 	$('#playground2 div:nth-child(2)').attr('id', 'my_awesome_div2');
 
 	//playground 3 code
+	var neato = $('<ul>',{
+		class: 'neato'
+	});
+	$('#playground3').append(neato);
+
+	var neatoli = '<li>';
+	for (i = 1; i <= 3; i++) {
+		$('.neato').append(neatoli);
+		$('#playground3 .neato li:nth-child(' + i + ')' ).text('Link ' + i);
+		
+	};
+	
 });
 </script>
 </head>
