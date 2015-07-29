@@ -42,6 +42,12 @@ $(document).ready(function()
 {
 	//playground 1 code
 
+	var playground_1_h1 = $('<h1>').text('I am a heading');
+	var playground_1_p = $('p:nth-child(2)').text(); //this should work but its dangerously unspecific
+	var playground_p_red = '<p style="color:red">' + $('p:nth-child(3)').text() + '</p>';
+	$('#playground1').append(playground_1_h1);
+	$('#playground1').append('<p>' + playground_1_p + '</p>');
+	$('#playground1').append(playground_p_red);
 	//playground 2 code
 
 	//playground 3 code
