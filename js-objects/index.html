@@ -3,13 +3,23 @@
     <head>
 		<title>JS Objects</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+	<body>
+		<div id="student-display-area">
+			<input id="student_name" type="text" value="">
+			<input id="student_grade"type="text" value="">
+			<button class="add_student">add student</button>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		
 		<script>
 			var student_information = {};
-			student_information.name = 'alex mattingley';
-			student_information.grade = 89;
+			// student_information.name = 'alex mattingley';
+			// student_information.grade = 89;
+			var student_array = [];
+
+
 
 			/*
 			 * FUNCTION NAME: add_student
@@ -21,19 +31,14 @@
 			 */
 			var student_Name
 			function add_student(){
-				student_Name = prompt('please enter your name');
-				student_Grade = prompt('please enter your grade');
+				student_Name = $('#student_name').val();
+				student_Grade = $('#student_grade').val();
+				student_information.name = student_Name;
+				student_information.grade = student_Grade;
+				console.log(student_information);
 			}
-
-			add_student();
-			console.log(student_Name);
-			console.log(student_Grade);
-
-		</script>
-    </head>
-	<body>
-		<div id="student-display-area">
+			$('.add_student').click(add_student);
 			
-		</div>
+		</script>
 	</body>
 </html>
