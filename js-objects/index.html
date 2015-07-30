@@ -7,9 +7,27 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		
 		<script>
-			var student = {};
-			student.name = 'alex mattingley';
-			student.grade = 89;
+			var student_information = {};
+			student_information.name = 'alex mattingley';
+			student_information.grade = 89;
+
+			/*
+			 * FUNCTION NAME: add_student
+			 * PURPOSE: To get a students name and grade from the user and create
+			 *          a student object from the user input that then gets stored 
+			 *          in a global array
+			 * PARAMETERS: None
+			 * GLOBAL VARIABLES: student_array
+			 */
+			var student_Name
+			function add_student(){
+				student_Name = prompt('please enter your name');
+				student_Grade = prompt('please enter your grade');
+			}
+
+			add_student();
+			console.log(student_Name);
+			console.log(student_Grade);
 
 		</script>
     </head>
