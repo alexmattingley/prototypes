@@ -85,7 +85,7 @@ $(document).ready(function()
 	};
 	
 	var awesome_figure = $('<figure>',{
-		class: "awesome_figure"
+		class: "awesome_picture"
 	});
 
 	$('#playground3').append(awesome_figure);
@@ -93,7 +93,21 @@ $(document).ready(function()
 	var awesome_img = $('<img>',{
 		src: "http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg"
 	});
-	$('#playground3 figure').append(awesome_img);
+	$('#playground3 .awesome_picture').append(awesome_img);
+	
+	var figcaption = $("<figcaption>",{
+		text: 'That\'s right',
+		style: "font-style: italic"
+	});
+	$('#playground3 .awesome_picture').append(figcaption);
+
+	var span_bold = $('<span>',{
+		class: "bold_text",
+		text: " you are",
+		style: "font-weight: bold",
+	});
+	$('#playground3 figcaption').append(span_bold);
+
 
 });
 </script>
