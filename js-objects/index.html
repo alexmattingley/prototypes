@@ -5,22 +5,23 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     </head>
 	<body>
-		<div id="student-display-area">
+
+		<div class="student-input-area col-sm-4">
+			<p>Input the student name:</p>
 			<input id="student_name" type="text" value="">
+			<p>Input the student grade:</p>
 			<input id="student_grade"type="text" value="">
-			<button class="add_student">add student</button>
+			<button class="add_student">Add Student</button>
+			<button class="refresh-student-data">Refresh Student Data</button>
+		</div>
+		<div id="student-display-area" class="">
+			
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		
 		<script>
-			var student_information = {};
-			// student_information.name = 'alex mattingley';
-			// student_information.grade = 89;
 			var student_array = [];
-
-
-
 			/*
 			 * FUNCTION NAME: add_student
 			 * PURPOSE: To get a students name and grade from the user and create
@@ -29,16 +30,36 @@
 			 * PARAMETERS: None
 			 * GLOBAL VARIABLES: student_array
 			 */
-			var student_Name
+			
 			function add_student(){
+				var student_information = {};
 				student_Name = $('#student_name').val();
 				student_Grade = $('#student_grade').val();
 				student_information.name = student_Name;
 				student_information.grade = student_Grade;
-				console.log(student_information);
+				student_array.push(student_information);
+				console.log('add student running');
+				
 			}
 			$('.add_student').click(add_student);
 			
+
+			function list_students(){
+				
+				var student_information = [];
+				for (var i = 0; i < student_array.length; i++) {
+					
+					student_information[i] = $('<p>' + i + ') ' + student_array[i].name + '-' + student_array[i].grade +'</p>');
+					
+				};
+				$('#student-display-area').append(student_information);
+			}
+
+			$('.refresh-student-data').click(list_students);
+
+			$(document).ready(function(){
+
+			});		
 		</script>
 	</body>
 </html>
