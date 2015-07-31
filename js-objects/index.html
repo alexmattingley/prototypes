@@ -82,25 +82,28 @@
 			
 
 			function list_students(){
-				$(".student-information-row").remove() //this is going to need to be changed
-				var student_information = [];
+				$(".student-information-row").remove()
+				var student_information_row = [];
+				var student_id_number_col = [];
+				var student_name_col = [];
+				var student_grade_col = [];
 				for (var i = 0; i < student_array.length; i++) {
-					var student_information_row = $('<div>',{
+					student_information_row[i] = $('<div>',{
 						class: 'student-information-row'
 					});
 
-					var student_id_number_col = $('<div>', {
-						class: 'student-id-number-col col-sm-3',
+					student_id_number_col[i] = $('<div>', {
+						class: 'student-id-number-col col-sm-4',
 						text: student_array[i].num_index + ' ) '
 					});
 
-					var student_name_col = $('<div>', {
-						class: 'student-name-col col-sm-3',
+					student_name_col[i] = $('<div>', {
+						class: 'student-name-col col-sm-4',
 						text: student_array[i].name
 					});
 
-					var student_grade_col = $('<div>', {
-						class: 'student-grad-col col-sm-3',
+					student_grade_col[i] = $('<div>', {
+						class: 'student-grad-col col-sm-4',
 						text: student_array[i].grade
 					});
 
@@ -112,10 +115,10 @@
 					// });
 					
 				};
-				$('.student-information-row').append(student_id_number_col);
-				$('.student-information-row').append(student_name_col);
-				$('.student-information-row').append(student_grade_col);
-	
+				$('.student-information-row').append(student_id_number_col[i]);
+				$('.student-information-row').append(student_name_col[i]);
+				$('.student-information-row').append(student_grade_col[i]);
+
 			}
 
 			$('.refresh-student-data').click(list_students);
