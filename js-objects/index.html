@@ -38,16 +38,16 @@
 				
 
 				<!-- <div class="student-information-row">
-					<div class="student-id-number col-sm-3">
-						<p>0)</p>
-					</div>
-					<div class="student-name col-sm-3">
-						<p>Alex Mattingley</p>
-					</div>
-					<div class="student-grade col-sm-3">
-						<p>100</p>
-					</div>
-				</div> -->
+						<div class="student-id-number col-sm-3">
+							<p>0)</p>
+						</div>
+						<div class="student-name col-sm-3">
+							<p>Alex Mattingley</p>
+						</div>
+						<div class="student-grade col-sm-3">
+							<p>100</p>
+						</div>
+					</div> -->
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -88,6 +88,22 @@
 					var student_information_row = $('<div>',{
 						class: 'student-information-row'
 					});
+
+					var student_id_number_col = $('<div>', {
+						class: 'student-id-number-col col-sm-3',
+						text: 'student-id-number-col is working'
+					});
+
+					var student_name_col = $('<div>', {
+						class: 'student-name-col col-sm-3',
+						text: 'student-name-col is working'
+					});
+
+					var student_grade_col = $('<div>', {
+						class: 'student-grad-col col-sm-3',
+						text: 'student-grade-col is working'
+					})
+
 					$('#student-display-area').append(student_information_row);
 					
 					// student_information[i] = $('<p>', {
@@ -96,7 +112,10 @@
 					// });
 					
 				};
-				
+				$('.student-information-row').append(student_id_number_col);
+				$('.student-information-row').append(student_name_col);
+				$('.student-information-row').append(student_grade_col);
+	
 			}
 
 			$('.refresh-student-data').click(list_students);
