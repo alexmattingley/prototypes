@@ -55,6 +55,7 @@
 		
 		<script>
 			var student_array = [];
+			var student_display_area;
 
 			/*
 			 * FUNCTION NAME: add_student
@@ -83,36 +84,45 @@
 
 			function list_students(){
 				$(".student-information-row").remove()
-				var student_information_row = [];
-				var student_id_number_col = [];
-				var student_name_col = [];
-				var student_grade_col = [];
+
 				for (var i = 0; i < student_array.length; i++) {
-					student_information_row[i] = $('<div>',{
+					student_information_row = $('<div>',{
 						class: 'student-information-row'
 					});
 
-					student_id_number_col[i] = $('<div>', {
+					student_id_number_col = $('<div>', {
 						class: 'student-id-number-col col-sm-4',
 						text: student_array[i].num_index + ' ) '
 					});
 
-					student_name_col[i] = $('<div>', {
+					student_name_col = $('<div>', {
 						class: 'student-name-col col-sm-4',
 						text: student_array[i].name
 					});
 
-					student_grade_col[i] = $('<div>', {
+					student_grade_col = $('<div>', {
 						class: 'student-grad-col col-sm-4',
 						text: student_array[i].grade
 					});
-
-					$('#student-display-area').append(student_information_row);
+					student_information_row.append(student_id_number_col, student_name_col, student_grade_col);
+					student_display_area.append(student_information_row);
 					
 					// student_information[i] = $('<p>', {
 					// 	text: student_array[i].num_index + ') ' + student_array[i].name + ' - ' + student_array[i].grade,
 					// 	class: "student-list"
 					// });
+					
+					/*** <div class="student-information-row">
+						<div class="student-id-number col-sm-3">
+							0)
+						</div>
+						<div class="student-name col-sm-3">
+							Alex Mattingley
+						</div>
+						<div class="student-grade col-sm-3">
+							100
+						</div>
+					</div> **/
 					
 				};
 				$('.student-information-row').append(student_id_number_col[i]);
@@ -134,7 +144,7 @@
 			$('.delete-student').click(delete_student);
 
 			$(document).ready(function(){
-
+				student_display_area = $('#student-display-area');
 			});		
 		</script>
 	</body>
