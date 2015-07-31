@@ -27,10 +27,16 @@
 					
 					var student_name = $('<span>', {
 						class: 'student_name',
-						text: student_array[i].name
+						text: student_array[i].name + ': '
+					});
+
+					var student_class = $('<span>', {
+						class: 'student_class',
+						text: student_array[i].class
 					});
 
 					student_container.append(student_name);
+					student_container.append(student_class);
 					$('body').append(student_container);
 				}
 
