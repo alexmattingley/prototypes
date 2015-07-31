@@ -30,12 +30,22 @@
 				<input id="student_name" type="text" value="">
 				<p>Input the student grade:</p>
 				<input id="student_grade"type="text" value="">
-				<button class="add_student">Add Student</button>
-				<button class="refresh-student-data">Refresh Student Data</button>
-				<button class="delete-student">Delete Student</button>
+				<button type="button" class="add_student btn btn-primary">Add Student</button>
+				<button type="button" class="refresh-student-data">Refresh Student Data</button>
+				<button type="button" class="delete-student">Delete Student</button>
 			</div>
 			<div id="student-display-area" class="col-sm-8">
-				
+				<div class="student-information-row clearfix">
+					<div class="student-id-number col-sm-4">
+						0)
+					</div>
+					<div class="student-name col-sm-4">
+						Alex Mattingley
+					</div>
+					<div class="student-grade col-sm-4">
+						100
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -75,7 +85,7 @@
 
 				for (var i = 0; i < student_array.length; i++) {
 					student_information_row = $('<div>',{
-						class: 'student-information-row'
+						class: 'student-information-row clearfix'
 					});
 
 					student_id_number_col = $('<div>', {
