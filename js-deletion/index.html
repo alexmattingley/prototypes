@@ -52,7 +52,9 @@
 				}
 				$('.student_row').click(function(){
 					var data_index = $(this).attr('data-index');
+					delete student_array[data_index];
 					$(this).remove();
+					console.log(student_array);
 					console.log('student ' + data_index + ' was clicked');
 				});
 
