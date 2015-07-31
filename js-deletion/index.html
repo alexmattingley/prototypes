@@ -52,6 +52,7 @@
 				}
 				$('.student_row').click(function(){
 					var data_index = $(this).attr('data-index');
+					$(this).remove();
 					console.log('student ' + data_index + ' was clicked');
 				});
 
