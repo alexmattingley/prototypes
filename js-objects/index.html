@@ -91,18 +91,18 @@
 
 					var student_id_number_col = $('<div>', {
 						class: 'student-id-number-col col-sm-3',
-						text: 'student-id-number-col is working'
+						text: student_array[i].num_index + ' ) '
 					});
 
 					var student_name_col = $('<div>', {
 						class: 'student-name-col col-sm-3',
-						text: 'student-name-col is working'
+						text: student_array[i].name
 					});
 
 					var student_grade_col = $('<div>', {
 						class: 'student-grad-col col-sm-3',
-						text: 'student-grade-col is working'
-					})
+						text: student_array[i].grade
+					});
 
 					$('#student-display-area').append(student_information_row);
 					
