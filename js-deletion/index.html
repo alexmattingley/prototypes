@@ -19,6 +19,9 @@
 				{name: 'Tom', class: 'software Engineering'},
 				{name: 'Scott', class: 'hardware Engineering'}
 			]
+
+
+
 			$(document).ready(function() {
 				for( var i = 0; i < student_array.length; i++) {
 					var student_container = $('<div>', {
@@ -47,6 +50,10 @@
 					student_container.append(student_row);
 					$('body').append(student_container);
 				}
+				$('.student_row').click(function(){
+					var data_index = $(this).attr('data-index');
+					console.log('student ' + data_index + ' was clicked');
+				});
 
 			});
 
