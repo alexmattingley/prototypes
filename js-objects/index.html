@@ -30,6 +30,7 @@
 				<input id="student_grade"type="text" value="">
 				<button class="add_student">Add Student</button>
 				<button class="refresh-student-data">Refresh Student Data</button>
+				<button class="delete-student">Delete Student</button>
 			</div>
 			<div id="student-display-area" class="col-sm-8">
 				
@@ -40,6 +41,7 @@
 		
 		<script>
 			var student_array = [];
+
 			/*
 			 * FUNCTION NAME: add_student
 			 * PURPOSE: To get a students name and grade from the user and create
@@ -57,7 +59,10 @@
 				student_object.grade = student_Grade;
 				student_array.push(student_object);
 				console.log('add student running');
-				
+				for(var i = 0; i < student_array.length; i++){
+					student_object.num_index = i;
+					console.log('you for loop is running');
+				}
 			}
 			$('.add_student').click(add_student);
 			
@@ -77,6 +82,14 @@
 			}
 
 			$('.refresh-student-data').click(list_students);
+
+
+			function delete_student() {
+				var id_prompt = prompt('Please enter the students number');
+				
+			}
+
+			$('.delete-student').click(delete_student);
 
 			$(document).ready(function(){
 
