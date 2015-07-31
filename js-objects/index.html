@@ -3,10 +3,11 @@
     <head>
 		<title>JS Objects</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
     </head>
 	<body>
-
-		<div class="student-input-area col-sm-4">
+	<div class="container-fluid">
+		<div class="student-input-area col-sm-3">
 			<p>Input the student name:</p>
 			<input id="student_name" type="text" value="">
 			<p>Input the student grade:</p>
@@ -17,11 +18,14 @@
 		<div id="student-display-area" class="">
 			
 		</div>
+	</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 		
 		<script>
 			var student_array = [];
+			var student_display;
+
 			/*
 			 * FUNCTION NAME: add_student
 			 * PURPOSE: To get a students name and grade from the user and create
@@ -32,32 +36,37 @@
 			 */
 			
 			function add_student(){
-				var student_information = {};
-				student_Name = $('#student_name').val();
-				student_Grade = $('#student_grade').val();
-				student_information.name = student_Name;
-				student_information.grade = student_Grade;
-				student_array.push(student_information);
+				var student_object = {};
+				var student_Name = $('#student_name').val();
+				var student_Grade = $('#student_grade').val();
+				student_object.name = student_Name;
+				student_object.grade = student_Grade;
+				student_array.push(student_object);
 				console.log('add student running');
+				$('#student_name').val('');
+				$('#student_grade').val('');
 				
 			}
-			$('.add_student').click(add_student);
+			
 			
 
+
 			function list_students(){
-				
-				var student_information = [];
+				$(student_display).remove();
+				//empty everything before you go to print again!!!
 				for (var i = 0; i < student_array.length; i++) {
 					
-					student_information[i] = $('<p>' + i + ') ' + student_array[i].name + '-' + student_array[i].grade +'</p>');
+					student_display = $('<p>' + i + ') ' + student_array[i].name + '-' + student_array[i].grade +'</p>');
 					
 				};
-				$('#student-display-area').append(student_information);
+				$('#student-display-area').append(student_display);
 			}
 
-			$('.refresh-student-data').click(list_students);
+			
 
 			$(document).ready(function(){
+				$('.add_student').click(add_student);
+				$('.refresh-student-data').click(list_students);
 
 			});		
 		</script>

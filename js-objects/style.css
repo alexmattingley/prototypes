@@ -1,0 +1,9 @@
+.student-input-area input {
+	width: 80%;
+	display: block;
+}
+
+.student-input-area button {
+	width: 80%;
+	display: block;
+}
