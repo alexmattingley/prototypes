@@ -6,17 +6,34 @@
 		<link rel="stylesheet" href="style.css">
     </head>
 	<body>
-
-		<div class="student-input-area col-sm-4">
-			<p>Input the student name:</p>
-			<input id="student_name" type="text" value="">
-			<p>Input the student grade:</p>
-			<input id="student_grade"type="text" value="">
-			<button class="add_student">Add Student</button>
-			<button class="refresh-student-data">Refresh Student Data</button>
-		</div>
-		<div id="student-display-area" class="">
-			
+		<header class="clearfix">
+			<div class="container-fluid">
+				<div class="input-head col-sm-4">
+					<h4>Input Student Information</h4>
+				</div>
+				<div class="student-num-header col-sm-2">
+					<h4>Number</h4>
+				</div>
+				<div class="student-name-header col-sm-2">
+					<h4>Name</h4>
+				</div>
+				<div class="student-grade-header col-sm-2">
+					<h4>Grade</h4>
+				</div>
+			</div>
+		</header>
+		<div class="container-fluid">
+			<div class="student-input-area col-sm-4">
+				<p>Input the student name:</p>
+				<input id="student_name" type="text" value="">
+				<p>Input the student grade:</p>
+				<input id="student_grade"type="text" value="">
+				<button class="add_student">Add Student</button>
+				<button class="refresh-student-data">Refresh Student Data</button>
+			</div>
+			<div id="student-display-area" class="col-sm-8">
+				
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
