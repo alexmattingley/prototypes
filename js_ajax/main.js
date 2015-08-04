@@ -2,7 +2,8 @@
 var global_result;
 var movieName;
 var firstMovie;
-var firstMovieImg;
+var firstMovieFirstImg;
+var firstMovieThirdImg;
 
 $(document).ready(function(){
 	$('button').click(function(){
@@ -13,11 +14,12 @@ $(document).ready(function(){
 			success: function(result){
 				console.log('loaded',result);
 				global_result = result;
+				firstMovie = global_result.feed.entry[0];
+				firstMovieFirstImg = global_result.feed.entry[0]['im:image'][0].label;
+				firstMovieThirdImg = global_result.feed.entry[0]['im:image'][2].label
+				console.log(firstMovieThirdImg);
 			}
 		});
-		firstMovie = global_result.feed.entry[0];
-		firstMovieImg = global_result.feed.entry[0]['im:image'][0].label;
-		console.log(firstMovieImg);
 	});
 });
 
