@@ -4,7 +4,10 @@ var movieName;
 var firstMovie;
 var firstMovieFirstImg;
 var firstMovieThirdImg;
-var movieThirdImg = [];
+var fistMovieArtist;
+var movieThirdImg;
+var movieArtist;
+var movieTitle;
 
 $(document).ready(function(){
 	$('button').click(function(){
@@ -17,16 +20,29 @@ $(document).ready(function(){
 				global_result = result;
 				firstMovie = global_result.feed.entry[0];
 				firstMovieFirstImg = global_result.feed.entry[0]['im:image'][0].label;
-				firstMovieThirdImg = global_result.feed.entry[0]['im:image'][2].label
+				firstMovieThirdImg = global_result.feed.entry[0]['im:image'][2].label;
+				fistMovieArtist = global_result.feed.entry[0]['im:artist'].label;
+				console.log(fistMovieArtist);
 				for(var i = 0; i < global_result.feed.entry.length; i++) {
-					movieThirdImg[i] = global_result.feed.entry[i]['im:image'][0].label;
+					movieThirdImg = global_result.feed.entry[i]['im:image'][0].label;
 					var movImg = $('<img>',{
-						src: movieThirdImg[i]
+						src: movieThirdImg
 					});
 
+					movieArtist = global_result.feed.entry[i]['im:artist'].label;
+					var movArtist = $('<p>',{
+						text: movieArtist
+					});
+
+					movieTitle = global_result.feed.entry[i]['im:name'].label;
+					var movTitle = $('<h4>',{
+						text: movieTitle
+					});
+
+					$('#main').append(movTitle);
 					$('#main').append(movImg);
+					$('#main').append(movArtist);
 				}
-			console.log(movieThirdImg);
 			}
 		});
 	});
