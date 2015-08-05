@@ -20,14 +20,14 @@ $(document).ready(function(){
 				firstMovieThirdImg = global_result.feed.entry[0]['im:image'][2].label
 				for(var i = 0; i < global_result.feed.entry.length; i++) {
 					movieThirdImg[i] = global_result.feed.entry[i]['im:image'][0].label;
+					var movImg = $('<img>',{
+						src: movieThirdImg[i]
+					});
+
+					$('#main').append(movImg);
 				}
 			console.log(movieThirdImg);
 			}
-			var movImg = $('<img>', {
-				src: movieThirdImg
-			});
-
-			$('#main').append(movImg);
 		});
 	});
 });
