@@ -4,6 +4,7 @@ var movieName;
 var firstMovie;
 var firstMovieFirstImg;
 var firstMovieThirdImg;
+var movieThirdImg = [];
 
 $(document).ready(function(){
 	$('button').click(function(){
@@ -17,8 +18,16 @@ $(document).ready(function(){
 				firstMovie = global_result.feed.entry[0];
 				firstMovieFirstImg = global_result.feed.entry[0]['im:image'][0].label;
 				firstMovieThirdImg = global_result.feed.entry[0]['im:image'][2].label
-				console.log(firstMovieThirdImg);
+				for(var i = 0; i < global_result.feed.entry.length; i++) {
+					movieThirdImg[i] = global_result.feed.entry[i]['im:image'][0].label;
+				}
+			console.log(movieThirdImg);
 			}
+			var movImg = $('<img>', {
+				src: movieThirdImg
+			});
+
+			$('#main').append(movImg);
 		});
 	});
 });
