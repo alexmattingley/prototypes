@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS oop</title>
+</head>
+<body>
+	<script>
+		var course_object = function(course) {
+			console.log('instance created');
+			this.course = course;
+		}
+
+		var course_obj1 = new course_object('Computer Science');
+		console.log(course_object);
+	</script>
+</body>
+</html>
