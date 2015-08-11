@@ -5,6 +5,7 @@
   <title>JS oop</title>
 </head>
 <body>
+	<script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 	<script>
 		var student_object = function(firstName, lastName, age, grade) {
 
@@ -13,7 +14,13 @@
 			this.age = age;
 			this.grade = grade;
 			this.fullName = function() {
-				console.log('The full name is the fullName function');
+				console.log('The full name is ' + firstName + lastName);
+			}
+			this.removeSelf = function() {
+				delete this.firstName;
+				delete this.lastName;
+				delete this.age;
+				delete this.grade;
 			}
 		}
 
@@ -21,6 +28,7 @@
 
 
 		student_1.fullName();
+		student_1.removeSelf();
 
 	</script>
 </body>
