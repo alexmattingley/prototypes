@@ -6,13 +6,22 @@
 </head>
 <body>
 	<script>
-		var course_object = function(course) {
-			console.log('instance created');
-			this.course = course;
+		var student_object = function(firstName, lastName, age, grade) {
+
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.age = age;
+			this.grade = grade;
+			this.fullName = function() {
+				console.log('The full name is the fullName function');
+			}
 		}
 
-		var course_obj1 = new course_object('Computer Science');
-		console.log(course_object);
+		var student_1 = new student_object('Alex', 'Mattingley', 19, 12);
+
+
+		student_1.fullName();
+
 	</script>
 </body>
 </html>
