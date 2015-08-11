@@ -7,6 +7,7 @@
 <body>
 	<script src='https://code.jquery.com/jquery-2.1.4.js'></script>
 	<script>
+
 		var student_object = function(firstName, lastName, age, grade) {
 
 			this.firstName = firstName;
@@ -25,10 +26,16 @@
 		}
 
 		var student_1 = new student_object('Alex', 'Mattingley', 19, 12);
+		var student_2 = new student_object('Richard', 'Mattingley', 16, 10);
+		var student_3 = new student_object('Stephanie', 'Mattingley', 14, 8);
 
 
-		student_1.fullName();
-		student_1.removeSelf();
+		var student_list = [student_1, student_2, student_3];
+		for( var i = 0; i < student_list.length; i++) {
+			var student_firstName = student_list[i].firstName;
+			console.log(student_firstName);
+		}
+		//student_1.removeSelf();
 
 	</script>
 </body>
