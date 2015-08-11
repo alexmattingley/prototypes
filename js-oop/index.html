@@ -39,14 +39,16 @@
 
 		var course_object = function(teacher, courseName) {
 			this.student_array = student_list;
-			this.teacher = teacher;
+			
 			this.set_teacher = function(teacher) {
-				
+				this.teacher = teacher;
 			}
 			this.courseName = courseName;
 		}
 
-		var course_1 = new course_object('Dan', 'ComputerScience');
+		var course_1 = new course_object('dan','ComputerScience');
+
+		console.log(course_1.set_teacher('dan'))
 
 	</script>
 </body>
