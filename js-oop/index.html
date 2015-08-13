@@ -37,18 +37,45 @@
 		}
 		//student_1.removeSelf();
 
-		var course_object = function(teacher, courseName) {
-			this.student_array = student_list;
-			
+		var course_object = function() {
+			//THIS IS THE CONTSTRUCTOR
+			this.student_array = [];
+			this.teacher = null;
+			this.courseName = null;
 			this.set_teacher = function(teacher) {
 				this.teacher = teacher;
 			}
-			this.courseName = courseName;
+
+			this.set_course_name = function(course) {
+				this.courseName = course;
+			}
+
+			this.course_info = function() {
+				var output = '';
+				output = this.courseName + ' ' + this.teacher + ' ' + this.student_array.length;
+				return output;
+			}
+			this.add_student = function(student_object) {
+				this.student_array.push(student_object);
+				return this.student_array.length;
+			}
+
+			this.remove_student = function(index){
+				delete this.student_array[index]
+				console.log(this.student_array);
+			} 
+			//END CONSTRUCTOR
 		}
 
-		var course_1 = new course_object('dan','ComputerScience');
+		var course_1 = new course_object();
 
-		console.log(course_1.set_teacher('dan'))
+		course_1.set_teacher('dan');
+		course_1.set_course_name('Front End Dev');
+		course_1.add_student(student_1);
+		course_1.add_student(student_2);
+		course_1.add_student(student_3);
+		console.log(course_1.course_info());
+		course_1.remove_student(1);
 
 	</script>
 </body>
