@@ -14,6 +14,7 @@
 			this.lastName = lastName;
 			this.age = age;
 			this.grade = grade;
+			this.deleted = false;
 			this.fullName = function() {
 				console.log('The full name is ' + firstName + lastName);
 			}
@@ -61,8 +62,13 @@
 			}
 
 			this.remove_student = function(index){
-				delete this.student_array[index]
-				console.log(this.student_array);
+				this.student_array[index].deleted = true;
+				this.student_array.splice(index, 1);
+
+			}
+
+			this.find_student_by_name = function(fname, lname) {
+
 			} 
 			//END CONSTRUCTOR
 		}
