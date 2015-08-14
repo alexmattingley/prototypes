@@ -68,7 +68,18 @@
 			}
 
 			this.find_student_by_name = function(fname, lname) {
-
+				for(var i = 0; i < this.student_array.length; i++) {
+					//console.log( 'find_student_by_name' , this.student_array[i].firstName);
+					if(this.student_array[i].firstName == fname) {
+					
+						
+						if(this.student_array[i].lastName == lname) {
+							var output = {};
+							output = this.student_array[i];
+							return output;
+						}
+					}
+				}			
 			} 
 			//END CONSTRUCTOR
 		}
@@ -82,6 +93,7 @@
 		course_1.add_student(student_3);
 		console.log(course_1.course_info());
 		course_1.remove_student(1);
+		console.log(course_1.find_student_by_name('Alex', 'Mattingley'));
 
 	</script>
 </body>
