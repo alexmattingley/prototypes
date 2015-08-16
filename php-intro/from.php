@@ -42,7 +42,7 @@ if(isset($my_var2)){
 }
 else
 {
-    echo $my_var1;
+    echo '<br>excersise 6 ' . $my_var1 . '<br>';
 }
 
 //EXERCISE 7
@@ -112,3 +112,5 @@ function find_greatest_num_and_index($direction)
 find_greatest_num_and_index(1);
 
 ?>
+
+<script src="to.js"></script>
