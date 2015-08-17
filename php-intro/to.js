@@ -67,11 +67,20 @@ switch(check_var){
 
 //EXERCISE 8
 
+var student = {
+	'name':'skippy',
+	'class':'English',
+	'grade': 75
+};
 
 
 //EXERCISE 9
 
+var student_2 = {};
 
+student_2.name = 'skippy';
+student_2.class = 'English';
+student_2.grade = 75;
 
 //EXERCISE 10
 

@@ -63,7 +63,8 @@ switch($check_var){
 
 //EXERCISE 8
 
-$student = ['name'=>'Skippy', 'class'=>'English', 'grade'=>75];
+$student_2 = ['name'=>'Skippy', 'class'=>'English', 'grade'=>75];
+//print_r($student_2);
 
 //EXERCISE 9
 
@@ -72,32 +73,36 @@ $student->name = 'Skippy';
 $student->class = 'English';
 $student->grade = 75;
 
+//print_r($student);
+
+
 //EXERCISE 10
 
 $num_array = [35, 2, 14, 56, 65, 52];
+$num_array_count = count($num_array);
 
 function find_greatest_num_and_index($direction)
 {
-    global $num_array;
+    global $num_array; //declares $num_array at the local scope
 
     $greatest = null;
     $greatest_index = null;
-    if($direction >= 0)
+    if($direction >= 0) //if the paramater is greater than or equal to 0...
     {
-        $i = 0;
-        $increment = 1;
-        $end_loop = count($num_array);
+        $i = 0;//..start at 0...
+        $increment = 1;//..increment by 1
+        $end_loop = count($num_array);//stop at last element
     }
     else
     {
-        $i = count($num_array);
-        $increment = -1;
-        $end_loop = 0;
+        $i = count($num_array); //start at 6
+        $increment = -1; //count down
+        $end_loop = 0; //end at zero
     }
 
-    while( $i != $end_loop)
+    while( $i != $end_loop) //while the value of i is not the end of the loop
     {
-        if( $num_array[$i] > $greatest )
+        if( $num_array[$i] > $greatest ) //greatest is set to null, how are we comparing null to a number?
         {
             $greatest = $num_array[$i];
             $greatest_index = $i;
@@ -109,7 +114,7 @@ function find_greatest_num_and_index($direction)
     ];
 }
 
-find_greatest_num_and_index(1);
+print_r(find_greatest_num_and_index(1));
 
 ?>
 
