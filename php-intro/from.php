@@ -114,8 +114,13 @@ function find_greatest_num_and_index($direction)
     ];
 }
 
-print_r(find_greatest_num_and_index(-1));
+print_r(find_greatest_num_and_index(-1)); //so not sure why we need the param at all, 
+//why arent we just passing in the array?
 
 ?>
 
 <script src="to.js"></script>
+
+
+
+

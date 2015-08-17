@@ -86,20 +86,34 @@ student_2.grade = 75;
 
 
 var num_array = [35, 2, 14, 56, 65, 52];
+var num_array_count = num_array.length;
 
-function find_greatest_num_and_index(array_for_test) {
-	for(var i = 0; i < array_for_test.length; i++) {
-		var value_current = array_for_test[i];
-		console.log('outer: ' , value_current);
-
-		for(var j = 0; j < array_for_test.length; j++) {
-			var value_looped = array_for_test[j];
-			console.log('inner: ' , value_looped);
-		}
+function find_greatest_num_and_index(direction) {
+	var greatest = null;
+	var greatest_index = null;
+	if(direction >= 0) {
+		var i = 0;
+		var increment = 1;
+		var end_loop = num_array_count;
 	}
+	else {
+		var i = num_array_count;
+		var increment = -1;
+		var end_loop = 0;
+	}
+	while( i != end_loop) {
+		if(num_array[i] > greatest) {
+			greatest = num_array[i];
+			greatest_index = i;
+		}
+		i += increment;
+	}
+	var greatest_info = {'greatest': greatest, 'greatest_index': greatest_index}
+	return greatest_info;
+
 }
 
-find_greatest_num_and_index(num_array);
+console.log(find_greatest_num_and_index(1));
 
 
 
