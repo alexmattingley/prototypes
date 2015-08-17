@@ -39,10 +39,30 @@ console.log(my_int2);
 
 //EXERCISE 6
 
+var my_var2; //needs to be defined or it will through an error.
+var my_var1 = 'Hello';
+if(my_var2 != undefined) {
+	console.log('my_var2 is defined: ' + my_var2);
+}else {
+	console.log('my_var2 is not defined and my_var1 is: ' + my_var1);
+}
 
 
 //EXERCISE 7
 
+var check_var = "What time is it?";
+
+switch(check_var){
+	case 'hello':
+		console.log('greetings');
+		break;
+	case 'bye':
+		console.log('good bye');
+		break;
+	default:
+		console.log('It\'s party time!');
+		break;
+}
 
 
 //EXERCISE 8
