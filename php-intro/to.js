@@ -85,3 +85,23 @@ student_2.grade = 75;
 //EXERCISE 10
 
 
+var num_array = [35, 2, 14, 56, 65, 52];
+
+function find_greatest_num_and_index(array_for_test) {
+	for(var i = 0; i < array_for_test.length; i++) {
+		var value_current = array_for_test[i];
+		console.log('outer: ' , value_current);
+
+		for(var j = 0; j < array_for_test.length; j++) {
+			var value_looped = array_for_test[j];
+			console.log('inner: ' , value_looped);
+		}
+	}
+}
+
+find_greatest_num_and_index(num_array);
+
+
+
+
+

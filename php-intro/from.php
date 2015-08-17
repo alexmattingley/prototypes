@@ -114,7 +114,7 @@ function find_greatest_num_and_index($direction)
     ];
 }
 
-print_r(find_greatest_num_and_index(1));
+print_r(find_greatest_num_and_index(-1));
 
 ?>
 
