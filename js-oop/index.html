@@ -115,7 +115,18 @@
 			geometry.add_student(student);
 		}
 		console.log(geometry);
+
+		var algerbra = new course_object();
+
+		algerbra.set_course_name('algerbra');
+		algerbra.set_teacher('kimura');
+		for(var i = 0; i < 2; i ++) {
+			var student = new student_object(
+			prompt('First Name?'), prompt('Last Name?'), prompt('age?'), prompt('grade?'));
+			algerbra.add_student(student);
+		}
 		
+		console.log(algerbra);
 
 
 	</script>
