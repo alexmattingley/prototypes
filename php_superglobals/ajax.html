@@ -15,9 +15,9 @@
 	</style>
 	<body>
 		<form>
-			<input type="checkbox" name="Howdy">Howdy
+			<input type="checkbox" name="Howdy" value="Howdy is yes">Howdy
 			<textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
-			<button>Ajax Call</button>
+			<button type="button">Ajax Call</button> <!--type is really important -->
 		</form>
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script>
@@ -42,7 +42,7 @@
 			});
 
 			/*****
-			Why is it that the data is still showing up in the URL despite that I said POST?
+			Why is it that the data is still showing up in the URL despite that I said POST? - this is because your button type was wrong.
 			
 			*****/
 
