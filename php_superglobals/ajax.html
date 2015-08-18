@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Ajax Form</title>
+	</head>
+	<style>
+		input, label, select, button {
+			margin: 10px;
+		}
+
+		textarea {
+			display: block;
+		}
+	</style>
+	<body>
+		<form>
+			<input type="checkbox" name="Howdy">Howdy
+			<textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+			<button>Ajax Call</button>
+		</form>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+			function call_ajax() {
+				$.ajax({
+					url: 'index.php',
+					method: 'POST',
+					data: {
+						
+					},
+					dataType: 'text',
+					success: function(response){
+						console.log(response);
+					}
+				})
+			}
+
+			$('button').click(function(){
+				call_ajax();
+			});
+
+		</script>
+	</body>
+</html>
