@@ -9,9 +9,7 @@
 			<?php 
 				$images_array = glob("images/*.jpg");
 				for($i = 0; $i <= count($images_array); $i++) {
-					//print("<img src='".$images_array[$i]."' alt=''>");
-					//print("<img src='{$images_array[$i]}' alt=''>");
-					?><img src='<?=$images_array[$i];?>' alt=''><?php
+					print("<img src='".$images_array[$i]."' alt=''>");
 				}
 
 			?>
