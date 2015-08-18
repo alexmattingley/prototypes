@@ -1,5 +1,6 @@
 <?php 
 
+
 	$images_array = glob("images/*.jpg");
 	$success = false;
 	if($images_array === false) {
@@ -18,13 +19,3 @@
 
 // look up how to json encode a php variable
 ?>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script>
-	function load_files() {
-		console.log('hello load_files');
-	}
-
-	$(document).ready(function(){
-		load_files();
-	});
-</script>

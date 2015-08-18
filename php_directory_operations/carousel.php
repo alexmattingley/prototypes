@@ -2,10 +2,13 @@
 <html>
 	<head>
 	  <meta charset="utf-8">
-	  <title>index</title>
+	  <title>Carousel</title>
 	</head>
 	<body>
-
+		<button type="button">Bring on the Images</button>
+		<div class="image-container">
+			
+		</div>
 	</body>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script>
@@ -13,15 +16,26 @@
 			$.ajax({
 				url: 'dir_listing.php',
 				dataType: 'JSON',
-				//data: {'files' : files},
 				success: function(response){
-					console.log(response);
+					//console.log(response.files);
+					for(var i = 0; i < response.files.length; i++){
+						console.log(response.files[i]);
+						var indiv_img = $('<img>',{
+							'src': response.files[i]
+						});
+						$('.image-container').append(indiv_img);
+					}
+
 				}
-			});
+			})
 		}
 
-		$(document).ready(function(){
+		$('button').click(function(){
 			load_files();
+		});
+
+		$(document).ready(function(){
+			
 		});
 	</script>
 </html>
