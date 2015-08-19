@@ -50,20 +50,22 @@
 		
 
 		var current_img_id = 0;
-		var next_up = 1;
+		var next_up;
 		function slide_count_up() {
+			next_up = current_img_id+1;
+			console.log(next_up);
 			if(current_img_id <= image_array.length-3){
 				current_img_id++;
-				next_up++;
+				
 			}
 			else {
-				console.log('what you high or something?');
+				console.log('stop pressing next');
 			}	
 		}
 
 		function slide_count_down(){
 			if (current_img_id >= 1) {
-				console.log('slide_count_down');
+				console.log(current_img_id);
 				current_img_id--;
 				next_up--;
 				console.log(current_img_id);
@@ -74,7 +76,6 @@
 		}
 
 		function next_img() {
-			
 			console.log($('img[img-id="' + current_img_id +']'));
 			$('img[img-id="' + current_img_id +'"]').animate({
 				'left': '-100%'
@@ -87,7 +88,15 @@
 
 		function prev_image() {
 			console.log('you clicked prev_image');
-			slide_count_down();
+			if(current_img_id >= 1){
+				$('img[img-id="' + current_img_id +'"]').animate({
+					' left': '100%'
+				}, 1000);
+				$('img[img-id="' + next_up +'"]').animate({
+					'left': '0'
+				}, 1000);
+				slide_count_down();
+			}
 		}
 
 
