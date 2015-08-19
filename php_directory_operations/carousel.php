@@ -51,52 +51,55 @@
 
 		var current_img_id = 0;
 		var next_up;
-		function slide_count_up() {
-			next_up = current_img_id+1;
-			console.log(next_up);
-			if(current_img_id <= image_array.length-3){
-				current_img_id++;
+		// function slide_count_up() {
+		// 	next_up = current_img_id+1;
+		// 	console.log(next_up);
+		// 	if(current_img_id <= image_array.length-3){
+		// 		current_img_id++;
 				
-			}
-			else {
-				console.log('stop pressing next');
-			}	
-		}
+		// 	}
+		// 	else {
+		// 		console.log('stop pressing next');
+		// 	}	
+		// }
 
-		function slide_count_down(){
-			if (current_img_id >= 1) {
-				console.log(current_img_id);
-				current_img_id--;
-				next_up--;
-				console.log(current_img_id);
-			}else{
-				console.log('You need to stop there son');
-			}
+		// function slide_count_down(){
+		// 	if (current_img_id >= 1) {
+		// 		console.log(current_img_id);
+		// 		current_img_id--;
+		// 		next_up--;
+		// 		console.log(current_img_id);
+		// 	}else{
+		// 		console.log('You need to stop there son');
+		// 	}
 			
-		}
+		// }
 
 		function next_img() {
-			console.log($('img[img-id="' + current_img_id +']'));
+			next_up = current_img_id+1;
 			$('img[img-id="' + current_img_id +'"]').animate({
 				'left': '-100%'
 			}, 1000);
 			$('img[img-id="' + next_up +'"]').animate({
 				'left': '0'
 			}, 1000);
-			slide_count_up();
+			current_img_id = next_up;
 		}
 
 		function prev_image() {
-			console.log('you clicked prev_image');
+			next_up = current_img_id -1;
+			console.log('current_img_id' + current_img_id);
+			console.log('next_up' + next_up);
 			if(current_img_id >= 1){
 				$('img[img-id="' + current_img_id +'"]').animate({
-					' left': '100%'
+					'left': '100%'
 				}, 1000);
 				$('img[img-id="' + next_up +'"]').animate({
 					'left': '0'
 				}, 1000);
-				slide_count_down();
+				
 			}
+			current_img_id = next_up;
 		}
 
 
