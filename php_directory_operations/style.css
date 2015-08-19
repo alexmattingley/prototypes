@@ -1,0 +1,16 @@
+.image-container {
+	max-width: 900px;
+	height: 650px;
+	position: relative;
+	overflow: hidden;
+}
+
+.image-container img {
+	position: absolute;
+	left: 100%;
+	top: 0;
+}
+
+.image-container .current-image {
+	left: 0;
+}
