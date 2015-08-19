@@ -52,15 +52,20 @@
 		var current_img_id = 0;
 		var next_up = 1;
 		function slide_count_up() {
-			current_img_id++;
-			next_up++;
-			console.log(current_img_id);
+			if(current_img_id <= image_array.length-3){
+				current_img_id++;
+				next_up++;
+			}
+			else {
+				console.log('what you high or something?');
+			}	
 		}
 
 		function slide_count_down(){
 			if (current_img_id >= 1) {
 				console.log('slide_count_down');
 				current_img_id--;
+				next_up--;
 				console.log(current_img_id);
 			}else{
 				console.log('You need to stop there son');
