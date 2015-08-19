@@ -50,26 +50,34 @@
 		
 
 		var current_img_id = 0;
+		var next_up = 1;
 		function slide_count_up() {
 			current_img_id++;
+			next_up++;
 			console.log(current_img_id);
 		}
 
 		function slide_count_down(){
-			console.log('slide_count_down');
-			current_img_id--;
-			console.log(current_img_id);
+			if (current_img_id >= 1) {
+				console.log('slide_count_down');
+				current_img_id--;
+				console.log(current_img_id);
+			}else{
+				console.log('You need to stop there son');
+			}
+			
 		}
 
 		function next_img() {
-			slide_count_up();
-			console.log('you clicked next_img');
-			$('img[img-id="0"]').animate({
+			
+			console.log($('img[img-id="' + current_img_id +']'));
+			$('img[img-id="' + current_img_id +'"]').animate({
 				'left': '-100%'
 			}, 1000);
-			$('img[img-id="1"]').animate({
+			$('img[img-id="' + next_up +'"]').animate({
 				'left': '0'
 			}, 1000);
+			slide_count_up();
 		}
 
 		function prev_image() {
