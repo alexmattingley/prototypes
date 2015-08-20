@@ -6,19 +6,24 @@ foreach ($_POST as $key => $value) {
 
 	switch ($key) {
 		case 'first_name':
-			print('<br>checking first_name: ' . $value . '<br>');
+			if(preg_match('/.{2,}/', $value)){
+				print("<br>checking $key: " . $value . '<br>');
+			}
+			else{
+				print('<br>Thats not a valid name entry<br>');
+			}
 			break;
 		case 'age':
-			print('checking age: ' . $value . '<br>');
+			print("checking $key: " . $value . '<br>');
 			break;
 		case 'phone':
-			print('checking phone: ' . $value . '<br>');
+			print("checking $key: " . $value . '<br>');
 			break;
 		case 'username':
-			print('checking username: ' . $value . '<br>');
+			print("checking $key: " . $value . '<br>');
 			break;
 		case 'bonus':
-			print('checking bonus: ' . $value . '<br>');
+			print("checking $key: " . $value . '<br>');
 			break;
 		default:
 			print('everything else<br>');
