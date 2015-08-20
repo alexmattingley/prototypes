@@ -20,14 +20,23 @@
 	<script>
 
 		var image_array = [''];
-		var image_array_index = '';
+		var current_img_id = 0;
+		var next_up;
+
+		/************************
+		Function: Load_files
+		Purpose: calls the data from dir_listing and creates the images
+		Params: none
+		Globals: image_array
+		*************************/
+
 		function load_files() {
 			$.ajax({
 				url: 'dir_listing.php',
 				dataType: 'JSON',
 				success: function(response){
 					for(var i = 0; i < response.files.length; i++){
-						image_array_index = i;
+	
 						image_array[i] = response.files[i];
 						var indiv_img = $('<img>',{
 							'src': response.files[i],
@@ -42,14 +51,27 @@
 			});
 		}
 
+		//End Load_files
+
+		/************************
+		Function: position_first_image
+		Purpose: Moves the first image into the default slot
+		Params: none
+		Globals: None
+		**********************/
+
 		function position_first_image() {
 			$('img[img-id="0"]').addClass('current-image');
 		}
 
-		
+		//end position_first_image
 
-		var current_img_id = 0;
-		var next_up;
+		/************************
+		Function: next_img
+		Purpose: this moves the current image left, and the next image into position
+		Params: none
+		Globals: next_up, current_img_id
+		**********************/
 		
 		function next_img() {
 			if(current_img_id < image_array.length-1){
@@ -64,10 +86,17 @@
 			}
 		}
 
+		//end next_img
+
+		/************************
+		Function: prev_img
+		Purpose: this moves the current image right, and the next image into position
+		Params: none
+		Globals: next_up, current_img_id
+		**********************/
+
 		function prev_image() {
 			next_up = current_img_id -1;
-			console.log('current_img_id' + current_img_id);
-			console.log('next_up' + next_up);
 			if(current_img_id >= 1){
 				$('img[img-id="' + current_img_id +'"]').animate({
 					'left': '100%'
@@ -80,7 +109,9 @@
 			current_img_id = next_up;
 		}
 
+		//end prev_img
 
+		//all of the click functions that call all of the functions for the carousel and regex
 
 		$('#load_files').click(function(){
 			load_files();
