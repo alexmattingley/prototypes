@@ -1,9 +1,13 @@
 <?php
 
-print_r($_POST);
+//print_r($_POST);
 
 foreach($_POST as $indiv_elem => $indiv_elem_value) {
-	echo "<br>$indiv_elem_value<br>";
+	echo "$indiv_elem_value<br>";
 }
+foreach ($_POST as $key => $value) {
+	echo "$key: $value<br>";
+}
+
 
 ?>
