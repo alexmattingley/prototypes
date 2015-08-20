@@ -6,7 +6,7 @@ foreach ($_POST as $key => $value) {
 
 	switch ($key) {
 		case 'first_name':
-			print('checking first_name: ' . $value . '<br>');
+			print('<br>checking first_name: ' . $value . '<br>');
 			break;
 		case 'age':
 			print('checking age: ' . $value . '<br>');
