@@ -4,13 +4,15 @@
     print_r($_SESSION);
 
     foreach ($_SESSION as $key => $value) {
-
+        $error_index = 0;
         switch($key){
             case 'name':
                 if(preg_match('/.{2,}/', $value)){
                     print("<br>checking $key: " . $value . '<br>');
                 }else{
-                    print('<br>Thats not a valid name entry<br>');
+                    $_SESSION['errors'][$error_index] = 'you name entered is invalid';
+                    $error_index++;
+                    print($error_index);
                 }
             break;
             case 'age':
@@ -19,6 +21,7 @@
                 }else{
                     print("<br>Wow your old, like really really old. Maybe try to enter your actual age? cause I know your not $value<br>");
                 }
+            break;
             case 'occupation':
                 if(preg_match('/.{2,}/', $value)){
                     print("<br>checking occupation: $value<br>");
@@ -28,5 +31,5 @@
             break;
         }
     }
-
+    print_r($_SESSION);
 ?>
