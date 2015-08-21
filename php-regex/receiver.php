@@ -42,7 +42,7 @@ foreach ($_POST as $key => $value) { //loops through each value of the post vari
 			if(preg_match('/[0-9]{3}/', $value)){//checks for any 3 numbers consecutively
 				print("checking $key: " . $value . '<br>');
 			}else {
-				print("$key: why you no have three consecutive numbers?");
+				print("<br>$key: why you no have three consecutive numbers?");
 			}
 			break;
 		default:
