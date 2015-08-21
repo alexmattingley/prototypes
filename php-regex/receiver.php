@@ -15,7 +15,7 @@ foreach ($_POST as $key => $value) { //loops through each value of the post vari
 			break;
 		
 		case 'age':
-			if(preg_match('/[0-9]{1,3}/', $value)){ //checks that you entered between 1 and 3 numbers 0-9.
+			if(preg_match('/(^[0-9]{1,3}$)/', $value)){ //checks that you entered between 1 and 3 numbers 0-9.
 				print("checking $key: " . $value . '<br>');
 			}else{
 				print("Wow your old, like really really old. Maybe try to enter your actual age? cause I know your not $value");
