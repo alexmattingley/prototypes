@@ -16,33 +16,33 @@ foreach ($_POST as $key => $value) { //loops through each value of the post vari
 		
 		case 'age':
 			if(preg_match('/(^[0-9]{1,3}$)/', $value)){ //checks that you entered between 1 and 3 numbers 0-9.
-				print("checking $key: " . $value . '<br>');
+				print("<br>checking $key: " . $value . '<br>');
 			}else{
-				print("Wow your old, like really really old. Maybe try to enter your actual age? cause I know your not $value");
+				print("<br>Wow your old, like really really old. Maybe try to enter your actual age? cause I know your not $value<br>");
 			}
 			break;
 		
 		case 'phone':
 			if (preg_match('/([0-9]{3} [0-9]{3} [0-9]{4})|([0-9]{3}-[0-9]{3}-[0-9]{4})|([1]{1}[0-9]{3} [0-9]{3} [0-9]{4})|(\([0-9]{3}\) [0-9]{3}-[0-9]{4})/', $value)) { //checks that your number matches one of these formats: (###) ###-####, ### ### ####, ###-###-####, 1### ### ####
-				print("checked $key: " . $value . ' ...Your good!<br>');
+				print("<br>checked $key: " . $value . ' ...Your good!<br>');
 			}else{
-				print('we are only testing for American numbers. You either wrote an unmurican number, or you wrote your number weird<br>');
+				print('<br>we are only testing for American numbers. You either wrote an unmurican number, or you wrote your number weird<br>');
 			}
 			break;
 		
 		case 'username':
 			if(preg_match('/(^[a-zA-Z])([a-zA-Z0-9]{5})/', $value)){//checks that the username starts with any letter, and that it has 5 procceeding characters that are letters and numbers
-				print("checking $key: " . $value . '<br>');
+				print("<br>checking $key: " . $value . '<br>');
 			}else{
-				print('your username should be 6 characters long, start with a letter and contain nothing but letters and numbers');
+				print('<br>your username should be 6 characters long, start with a letter and contain nothing but letters and numbers<br>');
 			}
 			break;
 		
 		case 'bonus':
 			if(preg_match('/[0-9]{3}/', $value)){//checks for any 3 numbers consecutively
-				print("checking $key: " . $value . '<br>');
+				print("<br>checking $key: " . $value . '<br>');
 			}else {
-				print("<br>$key: why you no have three consecutive numbers?");
+				print("<br>$key: why you no have three consecutive numbers?<br>");
 			}
 			break;
 		default:
