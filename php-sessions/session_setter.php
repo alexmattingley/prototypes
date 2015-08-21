@@ -1,6 +1,6 @@
 <?php
-session_start();
-print_r($_SESSION);
+    session_start();
+    print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,10 +10,10 @@ print_r($_SESSION);
 </head>
 <body>
     <form action="session_reader.php" method="POST">
-        <input type="text" name="Name">
-        <input type="text" name="Age">
+        <input type="text" name="name">
+        <input type="text" name="age">
         <input type="text" name="occupation">
         <button type="submit">Submit</button>
     </form>
 </body>
-</html>g
+</html>
