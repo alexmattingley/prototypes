@@ -16,6 +16,12 @@
         $('#login_button').click(function(){
             console.log('you clicked me');
         });
+
+        function ajax_call(){
+            $.ajax({
+                url:'login_handler.php',
+            });
+        }
     </script>
 </body>
 </html>
