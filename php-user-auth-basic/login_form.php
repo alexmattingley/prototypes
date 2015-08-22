@@ -25,7 +25,8 @@
                 method: 'POST',
                 dataType: 'text',
                 succes:function(response){
-                    console.log(response);
+                    console.log('response',response);
+
                 }
             });
         }
