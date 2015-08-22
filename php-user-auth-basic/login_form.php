@@ -6,7 +6,7 @@
     <title>login_form</title>
 </head>
 <body>
-    <form action="login_handler.php">
+    <form>
         <input type="text" name="username">
         <input type="text" name="password">
         <button id="login_button" type="button">Login</button>
@@ -15,7 +15,7 @@
     <script>
         $('#login_button').click(function(){
             console.log('you clicked me');
-            ajax_call();
+            //ajax_call();
         });
 
         function ajax_call(){
