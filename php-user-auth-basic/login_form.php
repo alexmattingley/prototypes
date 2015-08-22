@@ -15,11 +15,18 @@
     <script>
         $('#login_button').click(function(){
             console.log('you clicked me');
+            ajax_call();
         });
 
         function ajax_call(){
             $.ajax({
                 url:'login_handler.php',
+                //data:{'username':}
+                method: 'POST',
+                dataType: 'text',
+                succes:function(response){
+                    console.log(response);
+                }
             });
         }
     </script>
