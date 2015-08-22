@@ -1,7 +1,7 @@
 <?php
     session_start();
     $_SESSION = $_POST;
-    print_r($_SESSION);
+    header('location: session_setter.php');
     $error_index = 0;
 
     foreach ($_SESSION as $key => $value) {
