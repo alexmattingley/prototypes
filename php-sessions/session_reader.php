@@ -2,9 +2,9 @@
     session_start();
     $_SESSION = $_POST;
     header('location: session_setter.php');
-    $error_index = 0;
+    $error_index = 0; //variable to dynamically generate index values for the errors array
 
-    foreach ($_SESSION as $key => $value) {
+    foreach ($_SESSION as $key => $value) { //check the session variables for specific values and keys
         
         switch($key){
             case 'name':
