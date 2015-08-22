@@ -25,8 +25,8 @@ To get these files to your local machine you will need to do the following
 ### Getting Started
 
 1. The following two files have been included your php-user-auth-basic folder
-	- login.php
-	- session_setter.php
+	- login_form.php
+	- login_handler.php
 
 2. Add your code to the appropriate files based on the below instructions
 
@@ -34,7 +34,7 @@ To get these files to your local machine you will need to do the following
 
 ## PHP Basic User Authentication
 ## Prototype 1
-- Create a new file, login_form.php
+- In login_form.php do the following:
 	- Create an input for username
 	- Create an input for password
 	- Create a login button that will be used to submit the form
@@ -42,26 +42,36 @@ To get these files to your local machine you will need to do the following
 		- calls a function that performs an ajax call
 		- url: login_handler.php
 		- data: username, password
+		- cache: false
 		- method: post
 		- dataType: 'text'
 		- success: inform user if they successfully logged in or not
-			- Check response for the word "true" or "false"
-- Create a new file, login_handler.php
-	- Create a nested associative array: $user_info
+			- for now just `console.log` the response from the 'server' 
+- In login_handler.php do the following:
+	- Create a nested associative array to hold several users: `$user_info`
+		- The array should hold all the users for your 'site', add at least **5** users
+		- You will use this array to validate a user or reject them if there info doesn't match
+		- **EXAMPLE**
 
 	```PHP
 	$user_info = [
-		['id'=> 0, 'username'=>'dpaschal', 'password' => 'fluffybunnies']
+		['id'=> 0, 'username'=>'dpaschal', 'password' => 'fluffybunnies'],
+		['id'=> 0, 'username'=>'rickybobby', 'password' => 'shakeandbake'],
+		['id'=> 0, 'username'=>'darkhelmet', 'password' => '12345']
 	];
 	```
 		
 	- get the data you received from your login_form.php
-	- loop through the array till you find a matching username. 
+		- declare a variable to hold the username
+		- declare a variable to hold the password
+	- loop through the array till you find a matching username.
+	 	- compare the user given data to the values in the `$user_info` array to see if there is a match
 	- Once you get the correct record, check the password within that record
-	- NOTE: any response from login_handler.php will show up in the ajax call's network call in login_form.php
+	- *NOTE:* any response from login_handler.php will show up in the ajax call's network call in login_form.php
 	- If the username and password match:
 		- use sessions, save the user's ID into the session variable under "user_id"
 			- for example: `$_SESSION['user_id']=5`;
+			- print out a success message
 	- If the username and password DON'T match:
 		- print out an error message
 
@@ -90,10 +100,12 @@ To get these files to your local machine you will need to do the following
 - in login_handler.php
 	- update the password in your $user_info array to use sha1()
 	- Validate your user using sha1()
+		- update your user variable that holds the user given password to use `sha1()`
 	
 	```PHP	
 		$user_info = [['id'=> 0, 'username'=>'dpaschal', 'password' => '2beb0192eb1ca5a8756bc89a09b93036e1854049']];
 	```
+	
 ## After you have completed all the above
 
 1. add, commit, and push your updated files to your php-user-auth-basic branch on gitHub
