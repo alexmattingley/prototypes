@@ -6,26 +6,30 @@
     <title>login_form</title>
 </head>
 <body>
-    <form action="login_handler.php" method="POST">
-        <input type="text" name="username">
-        <input type="text" name="password">
-        <button id="login_button">Login</button>
+    <form>
+        <input id="username" type="text" name="username">
+        <input id="password" type="text" name="password">
+        <button id="login_button" type="button">Login</button>
     </form>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
         $('#login_button').click(function(){
             console.log('you clicked me');
-            //ajax_call();
+            ajax_call();
         });
 
         function ajax_call(){
             $.ajax({
                 url:'login_handler.php',
-                //data:{'username':}
                 method: 'POST',
+                cache: false,
+                data: {
+                    'username': $('#username').val(),
+                    'password': $('#password').val()
+                },
                 dataType: 'text',
-                succes:function(response){
-                    console.log('response',response);
+                success: function(response){
+                    console.log(response);
 
                 }
             });
