@@ -38,6 +38,9 @@
         }
     }
 
-    print_r($_SESSION); //remember this doesnt have any values until we have a username match.
+    $output_string = json_encode($output);
+    print($output_string);
+
+    //print_r($_SESSION); //remember this doesnt have any values until we have a username match.
 
 ?>
