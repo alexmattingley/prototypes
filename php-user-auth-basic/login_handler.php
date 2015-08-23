@@ -5,14 +5,14 @@
         "success" => false
     );
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = sha1($_POST['password']);
 
     $user_info = [
-        ['id'=> 0, 'username'=>'dpaschal', 'password' => 'fluffybunnies'],
-        ['id'=> 1, 'username'=>'rickybobby', 'password' => 'shakeandbake'],
-        ['id'=> 2, 'username'=>'darkhelmet', 'password' => '12345'],
-        ['id'=> 3, 'username'=>'isprout', 'password' => 'ilovewenches'],
-        ['id'=> 4, 'username'=>'goggles', 'password'=>'getpitted']
+        ['id'=> 0, 'username'=>'dpaschal', 'password' => '2beb0192eb1ca5a8756bc89a09b93036e1854049'],
+        ['id'=> 1, 'username'=>'rickybobby', 'password' => '75510278cc01da664793802ac6fd1e0c9c14d08d'],
+        ['id'=> 2, 'username'=>'darkhelmet', 'password' => '8cb2237d0679ca88db6464eac60da96345513964'],
+        ['id'=> 3, 'username'=>'isprout', 'password' => 'c7c82f558bff302b98e49d8e73e4ca7cee44a4ca'],
+        ['id'=> 4, 'username'=>'goggles', 'password'=>'3fae2a9cd3b08fd83a5fafbcebe52a9a7a7ca58a']
     ];
 
     $user_info_length = count($user_info);
