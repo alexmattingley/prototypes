@@ -16,6 +16,12 @@
     foreach ($user_info as  $key => $value) {
         if($username == $value['username']){
             print("we have a match, welcome $username");
+            if($password == $value['password']){
+                print("we have a passmatch $password");
+            }
+            else{
+                print("password incorrect");
+            }
         }
     }
 
