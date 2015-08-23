@@ -2,6 +2,9 @@
     session_start();
     print_r($_POST);
 
+    $output = array(
+        "success" => false
+    );
     $username = $_POST['username'];
     $password = $_POST['password'];
 
@@ -20,7 +23,10 @@
             print("we have a match, welcome $username"); //make sure you remove this before final, makes things obvious.
             $_SESSION['user_id'] = $value['id'];
             if($password == $value['password']){
-                print("we have a passmatch $password");
+                $output['success'] = true;
+                $output['user_id'] = $_SESSION['user_id'];
+                $output['message'] = "Welcome $username";
+                print_r($output);
             }else{
                 print("password or username is incorrect");
             }
