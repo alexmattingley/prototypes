@@ -1,4 +1,3 @@
-<!--login_handler.php-->
 <?php
     session_start();
     print_r($_POST);
@@ -14,19 +13,25 @@
         ['id'=> 4, 'username'=>'goggles', 'password'=>'eatshitasshole']
     ];
 
+    $user_info_length = count($user_info);
+    $user_cycle = 0;
     foreach ($user_info as  $key => $value) {
         if($username == $value['username']){
-            print("we have a match, welcome $username");
+            print("we have a match, welcome $username"); //make sure you remove this before final, makes things obvious.
             $_SESSION['user_id'] = $value['id'];
             if($password == $value['password']){
                 print("we have a passmatch $password");
-            }
-            else{
+            }else{
                 print("password or username is incorrect");
+            }
+        }else{
+            $user_cycle++;
+            if($user_cycle == $user_info_length){
+                print('your username or password is incorrect');
             }
         }
     }
 
-    print_r($_SESSION);
+    print_r($_SESSION); //remember this doesnt have any values until we have a username match.
 
 ?>
