@@ -17,6 +17,7 @@
 
     $user_info_length = count($user_info);
     $user_cycle = 0; //this variable is in place to prevent multiple error messages when a user inputs an incorrect password
+
     foreach ($user_info as  $key => $value) { //cycle through $user_info array and tap into keys and values
         if($username == $value['username']){
             $_SESSION['user_id'] = $value['id'];
