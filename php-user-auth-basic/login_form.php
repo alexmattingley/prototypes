@@ -29,8 +29,11 @@
                 },
                 dataType: 'json',
                 success: function(response){
-                    console.log(response);
-
+                    if(response.success){
+                     console.log(response.message);
+                    }else {
+                        console.log(response.failure);
+                    }
                 }
             });
         }

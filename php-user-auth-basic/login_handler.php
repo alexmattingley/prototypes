@@ -25,12 +25,12 @@
                 $output['user_id'] = $_SESSION['user_id'];
                 $output['message'] = "Welcome $username";
             }else{
-                print("password or username is incorrect");
+                $output['failure'] = "password or username is incorrect";
             }
         }else{
             $user_cycle++;
             if($user_cycle == $user_info_length){
-                print('your username or password is incorrect');
+                $output['failure'] = "password or username is incorrect";
             }
         }
     }
