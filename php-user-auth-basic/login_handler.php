@@ -1,5 +1,6 @@
 <!--login_handler.php-->
 <?php
+    session_start();
     print_r($_POST);
 
     $username = $_POST['username'];
@@ -16,13 +17,16 @@
     foreach ($user_info as  $key => $value) {
         if($username == $value['username']){
             print("we have a match, welcome $username");
+            $_SESSION['user_id'] = $value['id'];
             if($password == $value['password']){
                 print("we have a passmatch $password");
             }
             else{
-                print("password incorrect");
+                print("password or username is incorrect");
             }
         }
     }
+
+    print_r($_SESSION);
 
 ?>
