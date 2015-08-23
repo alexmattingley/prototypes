@@ -27,7 +27,7 @@
                     'username': $('#username').val(),
                     'password': $('#password').val()
                 },
-                dataType: 'text',
+                dataType: 'json',
                 success: function(response){
                     console.log(response);
 
