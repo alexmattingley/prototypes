@@ -15,6 +15,8 @@ $user_info = [ //will eventually store the user information entered but for now 
     ['id'=> 4, 'username'=>'goggles', 'password'=>'3fae2a9cd3b08fd83a5fafbcebe52a9a7a7ca58a']
 ];
 
+
+
 $user_info_length = count($user_info);
 $user_cycle = 0; //this variable is in place to prevent multiple error messages when a user inputs an incorrect password
 
@@ -37,6 +39,6 @@ foreach ($user_info as  $key => $value) { //cycle through $user_info array and t
 }
 
 $output_string = json_encode($output);
-print($output_string);
+print($output_string); //this is what we are going to access in the ajax call.
 
 ?>

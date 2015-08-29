@@ -14,6 +14,13 @@
     }
 </style>
 <body>
+    <h2>login</h2>
+    <form action="login_handler.php" method="POST">
+        <input type="text" name="username" value="goggles">
+        <input type="text" name="password" value="getpitted">
+        <button>Login</button>
+    </form>
+
     <form action="index_insert.php" method="POST">
         <input name="title" type="text" placeholder="Title">
         <textarea name="details" id="details" cols="30" rows="10" placeholder="Details"></textarea>
