@@ -16,6 +16,7 @@
         <textarea name="details" id="details" cols="30" rows="10" placeholder="Details"></textarea>
         <input type="text" name="timestamp" placeholder="timestamp">
         <input type="text" name="favorite_color" placeholder="favorite color?">
+        <button>Submit</button>
     </form>
 </body>
 </html>
