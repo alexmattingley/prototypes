@@ -46,8 +46,8 @@ foreach ($user_info as  $key => $value) { //cycle through $user_info array and t
     }
 }
 
-
-print_r($output); //this is what we are going to access in the ajax call.
+print_r($output);//this is what we are going to access in the ajax call.
+print_r($_SESSION);
 
 ?>
 </div>
