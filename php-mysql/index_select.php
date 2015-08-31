@@ -8,6 +8,8 @@ if(mysqli_num_rows($results) > 0){
         $output[] = $result;
     }
     print_r($output);
+    $last_element = count($output)-1;
+    print_r($output[$last_element]["id"]);//printing out last element of $output assoc array
 }
 
 ?>

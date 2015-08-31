@@ -15,12 +15,14 @@
 </style>
 <body>
     <h2>login</h2>
+    <!--This form sends the login information to login_handler for verification-->
     <form action="login_handler.php" method="POST">
         <input type="text" name="username" value="goggles">
         <input type="text" name="password" value="getpitted">
         <button>Login</button>
     </form>
 
+    <!-- This form sends the task information to index_insert which then sends it to the db as an insert query-->
     <form action="index_insert.php" method="POST">
         <input name="title" type="text" placeholder="Title">
         <textarea name="details" id="details" cols="30" rows="10" placeholder="Details"></textarea>

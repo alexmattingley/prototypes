@@ -26,6 +26,8 @@ if(!empty($_SESSION['user_id'])){
 ?>
 <button>Logout</button>
 <script>
+
+    //logout button calls this.
     function logout_call(){
         $.ajax({
            url: 'logout.php',
