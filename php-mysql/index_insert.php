@@ -48,6 +48,10 @@ if(!empty($_SESSION['user_id'])){
             dataType: 'json',
             success: function(response){
                 console.log("response from index_select:", response);
+                var last_element_id = response[response.length-1]["id"];
+                console.log(last_element_id);
+                //so the issue is that there is really no easy way to take this variable and make it accessible to the php above:
+                //Some ideas: Put it in the DOM and then acccess it...calll the document directly in php. #just coder things.
             }
         })
     }

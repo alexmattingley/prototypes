@@ -6,10 +6,11 @@ if(mysqli_num_rows($results) > 0){
     while($result = mysqli_fetch_assoc($results)){
         $output[] = $result;
     }
-    print_r($output);
-    $last_element = count($output)-1;
-    $id_number = json_encode($output[$last_element]["id"]);//printing out last element of $output assoc array
-    print($id_number);
+    //print_r($output); //this will cause things to break so bear with me.
+    $output_string = json_encode($output);
+    print($output_string);
+    //$last_element = count($output)-1;
+    //printing out last element of $output assoc array
 }
 
 ?>
