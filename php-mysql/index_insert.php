@@ -39,8 +39,24 @@ if(!empty($_SESSION['user_id'])){
             }
         })
     }
+
+    function index_select_call(){
+        $.ajax({
+            url: 'index_select.php',
+            method: "POST",
+            cache: false,
+            dataType: 'json',
+            success: function(response){
+                console.log("response from index_select:", response);
+            }
+        })
+    }
     $('button').click(function(){
         logout_call();
+    });
+
+    $(document).ready(function() {
+        index_select_call();
     });
 
 </script>
